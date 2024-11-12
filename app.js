@@ -52,6 +52,25 @@ function subscribeToNotifications() {
 // Evento al hacer clic en el botón de suscripción
 document.getElementById("notifyBtn").addEventListener("click", subscribeToNotifications);
 
+getToken(messaging, { vapidKey: "TU_VAPID_KEY" })  // Reemplaza "TU_VAPID_KEY" con tu VAPID Key de Firebase
+   .then((currentToken) => {
+      if (currentToken) {
+         console.log("Token de dispositivo obtenido:", currentToken);
+         // Guarda este token o úsalo para configurar el dispositivo de prueba en Firebase
+      } else {
+         console.log("No se pudo obtener el token de dispositivo.");
+      }
+   })
+   .catch((err) => {
+      console.log("Error al obtener token de dispositivo:", err);
+   });
+
+
+
+
+
+
+
 // Escuchar mensajes en primer plano
 onMessage(messaging, (payload) => {
    console.log("Notificación recibida en primer plano:", payload);
