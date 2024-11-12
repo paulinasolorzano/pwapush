@@ -31,7 +31,7 @@ if ('serviceWorker' in navigator) {
 function subscribeToNotifications() {
    Notification.requestPermission().then((permission) => {
       if (permission === "granted") {
-         getToken(messaging, { vapidKey: "TU_VAPID_KEY" })
+         getToken(messaging, { vapidKey: "BIIZ6cK9ywQvUxBPvvD_I-36yQOZmRmtXas_qqYmJDjG6Vh0aG-cuG4N7dqliZL9gECrzYDo7BXWL4ZDdWP7Dmk" })
             .then((currentToken) => {
                if (currentToken) {
                   console.log("Token obtenido:", currentToken);
